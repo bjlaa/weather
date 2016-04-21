@@ -1,4 +1,6 @@
 import React from 'react-native';
+import Api from './src/api';
+
 var {
   AppRegistry,
   MapView,
@@ -14,6 +16,9 @@ var Weather = React.createClass({
         latitude:0,
         longitude:0
       },
+      city: '',
+      temperature: '',
+      description: '',
     }
   },
 
@@ -32,7 +37,13 @@ var Weather = React.createClass({
         latitude: region.latitude,
         longitude: region.longitude
       },
-    })
+    });
+
+    Api(region.latitude, region.longitude)
+      .then((data) => {
+        console.log(data);
+        this.setState(data);
+      });
   },
 });
 
