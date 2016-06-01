@@ -1,4 +1,4 @@
-import React from 'react-native';
+import React from 'react';
 import Api from './src/api';
 
 var {
@@ -7,7 +7,7 @@ var {
   View,
   StyleSheet,
   Text
-} = React;
+} = require('react-native');
 
 var Weather = React.createClass({
 
